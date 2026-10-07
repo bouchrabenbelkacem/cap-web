@@ -8,12 +8,26 @@ responsive, JavaScript, Git et tests. La gestion du DOM et des événements éta
 
 ## Deux acquis
 
-- Je sais transformer un comportement attendu en scénarios de test navigateur,
-  notamment vérifier les quatre attaques de l'étape 11 :
-  `b460a00` ajoute ces tests.
-- Je sais corriger un problème d'interaction et vérifier que la validation
-  affiche une erreur claire au lieu de bloquer silencieusement la saisie :
-  `2bdc8a5` corrige le refus des messages trop longs.
+- **Écrire, lire et utiliser des tests pour fiabiliser le code.** J'ai appris à
+  partir d'un test rouge pour trouver le défaut, puis à vérifier la correction
+  sans affaiblir le contrat. Les corrections de validation et de normalisation
+  des messages sont dans `6ba515a` et `8cbda73`. J'ai aussi pratiqué l'écriture
+  de tests unitaires en deux temps (rouge puis vert), consignée dans le carnet
+  avec `707464c`, et la revue de code : repérer les changements qui cassent un
+  contrat ou réintroduisent l'injection de HTML. Pour l'étape 11, j'ai ajouté
+  des tests navigateur couvrant la panne réseau, la limite, le texte HTML et
+  l'affichage mobile (`b460a00`). Enfin, j'ai corrigé le champ qui bloquait
+  silencieusement la saisie au lieu de montrer l'erreur attendue (`2bdc8a5`).
+
+- **Construire et faire évoluer une petite application web de bout en bout.**
+  J'ai travaillé sur la structure des modules et leurs rôles, l'affichage du
+  texte utilisateur sans l'interpréter comme du HTML, les événements du
+  formulaire, la mémoire de la conversation et la gestion d'une réponse du
+  serveur indisponible. J'ai également pratiqué l'adaptation mobile (`5a72fa4`),
+  l'ajout de la route de conseil (`20b877a`), ainsi que le travail Git en
+  branches, pull requests, relecture et fusion (`780380e`, `4e31009`). Le
+  README final documente l'installation, les commandes, l'arborescence et
+  l'API (`a0b3390`).
 
 ## Deux points à renforcer
 
