@@ -86,6 +86,13 @@ function afficherCompteur() {
 
 champ.addEventListener('input', afficherCompteur);
 
+champ.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && !event.shiftKey) {
+    event.preventDefault();
+    formulaire.requestSubmit();
+  }
+});
+
 // La limite vient de brain.js : un seul endroit à modifier.
 limiteElt.textContent = String(LIMITE);
 afficherCompteur();
