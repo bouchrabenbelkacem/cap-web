@@ -35,3 +35,13 @@ npm test
 - **`brain.js`** : valide le message (vide, espaces, limite) et choisit la réponse. Aucun accès à la page (`document`, `window`, `localStorage`).
 - **`view.js`** : affiche l’historique dans `#messages` avec `textContent`. Il ne décide aucune réponse.
 - **`app.js`** : relie le formulaire, le cerveau, l’affichage et la mémoire `capweb.historique`.
+## Arborescence
+
+atelier/
+├── public/   # page, styles et JavaScript du navigateur
+├── server/   # serveur web
+├── tests/    # tests automatisés
+├── browser/  # tests dans le navigateur
+├── scripts/  # scripts du projet
+├── package.json
+└── README.md
