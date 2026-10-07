@@ -32,6 +32,13 @@ export function validateMessage(raw) {
   return { ok: true, value };
 }
 
+export function estMessage(m) {
+  return m !== null
+    && typeof m === 'object'
+    && (m.role === 'user' || m.role === 'assistant')
+    && typeof m.text === 'string';
+}
+
 export function replyTo(message) {
   const texte = String(message).trim().toLowerCase();
   if (texte === 'salut' || texte === 'bonjour') {
