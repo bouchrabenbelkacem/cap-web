@@ -12,13 +12,8 @@ test('affiche un conseil de secours quand la requête échoue', async ({ page })
 
 test('refuse un message plus long que la limite avec une erreur visible', async ({ page }) => {
   await page.goto('/');
-  await page.locator('#message').evaluate((champ, texte) => {
-    champ.value = texte;
-    champ.dispatchEvent(new Event('input', { bubbles: true }));
-  }, 'a'.repeat(LIMITE + 1));
-  await page.locator('#chat-form').evaluate((formulaire) => {
-    formulaire.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-  });
+  await page.locator('#message').fill('a'.repeat(LIMITE + 1));
+  await page.getByRole('button', { name: /envoyer/i }).click();
   await expect(page.locator('#status')).toContainText(String(LIMITE));
   await expect(page.locator('#messages li')).toHaveCount(0);
 });

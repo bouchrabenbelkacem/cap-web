@@ -56,8 +56,9 @@ Les scénarios du navigateur sont dans `browser/attaques.spec.js` :
 1. La requête de conseil échoue : un message de secours lisible s’affiche.
    Pour reproduire manuellement une panne complète, laissez la page ouverte,
    arrêtez le serveur avec `Ctrl+C`, puis envoyez `conseil`.
-2. Un message de 251 caractères (la limite est 250) est refusé avec une erreur
-   visible, sans être ajouté à la conversation.
+2. Le champ permet de saisir 251 caractères pour tester le contrôle à l’envoi :
+   le message est refusé avec une erreur visible, sans être ajouté à la
+   conversation. La limite est de 250 caractères.
 3. `<b>test</b>` apparaît comme du texte littéral ; aucun élément `<b>` n’est
    créé dans la conversation.
 4. À 375 px de large, le contenu reste visible sans défilement horizontal.
