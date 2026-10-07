@@ -31,6 +31,6 @@ test('reste lisible à 375 px sans débordement horizontal', async ({ page }) =>
   await page.goto('/');
   await expect(page.locator('#chat-form')).toBeVisible();
   await expect(page.getByRole('button', { name: /envoyer/i })).toBeVisible();
-  const largeurDocument = await page.evaluate(() => document.documentElement.scrollWidth);
+  const largeurDocument = await page.locator('html').evaluate((html) => html.scrollWidth);
   expect(largeurDocument).toBeLessThanOrEqual(375);
 });
